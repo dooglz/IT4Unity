@@ -60,6 +60,7 @@ public class player : MonoBehaviour
             Debug.Log("Leaving: "+ oldtrack.gameObject.name + " Now on: " + track.gameObject.name);
         }
         trackGo = track.gameObject;
+        Debug.Log(track);
     }
 
     private void OnDrawGizmosSelected()

@@ -54,6 +54,9 @@ class Track : MonoBehaviour
                                  playerPos.z - transform.position.z);
         float ang = Vector2.Angle(of, oc);
         float dist = Mathf.Cos(ang * Mathf.Deg2Rad) * oc.magnitude;
+        float min = transform.localScale.z * -4.8f;
+        float max = transform.localScale.z * 5.1f;
+        dist = Mathf.Min(Mathf.Max(dist, min),max);
         return (LaneOrigin + (transform.forward * dist));
     }
 
