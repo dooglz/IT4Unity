@@ -13,10 +13,12 @@ public class Corner : Track {
         base.Update();
 	}
 
-    public override Vector3 CalculateLaneTarget(Vector3 playerPos)
-    {
-        return (transform.position + (transform.right*(transform.localScale.x * 5.0f)));
-    }
+  public override Vector3 CalculateLaneTarget(Vector3 playerPos)
+  {
+    Vector3 lt = (transform.position + (transform.right * (transform.localScale.x * 5.0f)));
+    lt.y = playerPos.y;
+    return lt;
+   }
 
     public override Vector3 CalculateNudge(Vector3 playerPos)
     {
