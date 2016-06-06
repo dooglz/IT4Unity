@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     public Track oldtrack = null;
     public Rigidbody rb;
     public Vector3 lanepos;
+    public int lane;
     public float maxVel = 20.0f;
 
     // Use this for initialization
@@ -98,11 +99,11 @@ public class player : MonoBehaviour
     {
         if (track != null)
         {
-            //move
-            lanepos = track.CalculateLaneTarget(transform.position);
-            Vector3 nudge = track.CalculateNudge(transform.position);
+      //move
+      lanepos = track.CalculateLaneTarget(transform.position,lane);
+            Vector3 nudge = track.CalculateNudge(transform.position, lane);
             transform.position += nudge;
-            rb.AddRelativeForce(track.GetAccelerateDirection(transform.position) * track.speedboost * 10.0f, ForceMode.Force);
+            rb.AddRelativeForce(track.GetAccelerateDirection(transform.position, lane) * track.speedboost * 10.0f, ForceMode.Force);
             //keep in lane
         }
         //have we fallen off the track?
@@ -124,5 +125,13 @@ public class player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+    if (lane > 0 && ( Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))) {
+      lane--;
     }
+    else if (lane < 3 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+    {
+      lane++;
+    }
+  }
 }
