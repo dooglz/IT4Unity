@@ -168,7 +168,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 49676fb83f623cb48ad4481c3c6fdbc1, type: 2}
+  - {fileID: 2100000, guid: 84acb71296c057044897a45d394f0274, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -349,6 +349,11 @@ MonoBehaviour:
   speedboost: 1.5
   landespread: 0
   LaneOrigin: {x: 56, y: 0, z: 0}
+  roadtextures:
+  - {fileID: 2100000, guid: 84acb71296c057044897a45d394f0274, type: 2}
+  - {fileID: 2100000, guid: 8315c508ee72a5344affcd5a59328c11, type: 2}
+  - {fileID: 2100000, guid: 49676fb83f623cb48ad4481c3c6fdbc1, type: 2}
+  lanes: 1
 --- !u!136 &13609206
 CapsuleCollider:
   m_ObjectHideFlags: 1
