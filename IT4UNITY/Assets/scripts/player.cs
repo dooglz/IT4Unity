@@ -49,8 +49,11 @@ public class player : MonoBehaviour
                 break;
             }
         }
-        if (newT == null) { return; }
-        if(track == null)
+        if (newT == null)
+        {
+            return;
+        }
+        if (track == null)
         {
             track = newT;
             Debug.Log("From no track to: " + track.gameObject.name);
@@ -63,35 +66,39 @@ public class player : MonoBehaviour
             {
                 Debug.Log("Leaving: " + oldtrack.gameObject.name + " Now on: Null");
                 trackGo = null;
-            }else{
-             trackGo = track.gameObject;
-             if (oldtrack != null) { 
-            Debug.Log("Leaving: "+ oldtrack.gameObject.name + " Now on: " + track.gameObject.name);
             }
             else
             {
-                Debug.Log("Leaving: null, Now on: " + track.gameObject.name);
-            }
+                trackGo = track.gameObject;
+                if (oldtrack != null)
+                {
+                    Debug.Log("Leaving: " + oldtrack.gameObject.name + " Now on: " + track.gameObject.name);
                 }
+                else
+                {
+                    Debug.Log("Leaving: null, Now on: " + track.gameObject.name);
+                }
+            }
         }
-       
+
         Debug.Log(track);
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (track != null)
+        if (track != null && trackGo != null)
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(lanepos, 0.2f);
             Gizmos.color = Color.white;
             Vector3 nudge = (lanepos - transform.position);
             //   Debug.Log(transform.position + " _ " + trackGo.transform.right + " _ " + nudge);
-            nudge.Scale(new Vector3(Mathf.Abs(trackGo.transform.right.x), Mathf.Abs(trackGo.transform.right.y), Mathf.Abs(trackGo.transform.right.z)));
+            nudge.Scale(new Vector3(Mathf.Abs(trackGo.transform.right.x), Mathf.Abs(trackGo.transform.right.y),
+                Mathf.Abs(trackGo.transform.right.z)));
             //  Debug.Log(nudge);
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position + nudge, 0.3f);
-            Gizmos.DrawLine(transform.position, transform.position + (trackGo.transform.right * 2.0f));
+            Gizmos.DrawLine(transform.position, transform.position + (trackGo.transform.right*2.0f));
         }
     }
 
@@ -99,11 +106,12 @@ public class player : MonoBehaviour
     {
         if (track != null)
         {
-      //move
-      lanepos = track.CalculateLaneTarget(transform.position,lane);
+            //move
+            lanepos = track.CalculateLaneTarget(transform.position, lane);
             Vector3 nudge = track.CalculateNudge(transform.position, lane);
             transform.position += nudge;
-            rb.AddRelativeForce(track.GetAccelerateDirection(transform.position, lane) * track.speedboost * 10.0f, ForceMode.Force);
+            rb.AddRelativeForce(track.GetAccelerateDirection(transform.position, lane)*track.speedboost*10.0f,
+                ForceMode.Force);
             //keep in lane
         }
         //have we fallen off the track?
@@ -118,20 +126,20 @@ public class player : MonoBehaviour
         }
         if (rb.velocity.magnitude > maxVel)
         {
-            rb.velocity = rb.velocity.normalized * maxVel;
+            rb.velocity = rb.velocity.normalized*maxVel;
         }
     }
 
     // Update is called once per frame
     private void Update()
     {
-
-    if (lane > 0 && ( Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))) {
-      lane--;
+        if (lane > 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+        {
+            lane--;
+        }
+        else if (lane < 3 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+        {
+            lane++;
+        }
     }
-    else if (lane < 3 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
-    {
-      lane++;
-    }
-  }
 }
