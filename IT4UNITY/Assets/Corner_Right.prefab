@@ -47,7 +47,7 @@ GameObject:
   - 23: {fileID: 2321344}
   - 114: {fileID: 11457396}
   m_Layer: 0
-  m_Name: Corner
+  m_Name: Corner_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

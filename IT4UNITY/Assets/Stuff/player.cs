@@ -10,7 +10,7 @@ public class player : MonoBehaviour
     public Vector3 lanepos;
     public int lane;
     public float maxVel = 20.0f;
-
+    public GameObject playerExplosion;
     // Use this for initialization
     private void Start()
     {
@@ -38,6 +38,15 @@ public class player : MonoBehaviour
         }
     }
 
+    public void Explode()
+    {
+        Instantiate(playerExplosion, transform.position, transform.rotation);
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<player>().enabled = false;
+        //rb.AddRelativeForce(Vector3.up*1000.0f);
+        // Destroy(gameObject);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Track newT = null;
@@ -47,6 +56,11 @@ public class player : MonoBehaviour
             {
                 newT = contact.otherCollider.gameObject.GetComponent<Track>();
                 break;
+            }
+            if (contact.otherCollider.gameObject.GetComponents<Death>().Length > 0)
+            {
+                Explode();
+                return;
             }
         }
         if (newT == null)
