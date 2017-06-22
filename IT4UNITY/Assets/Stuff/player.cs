@@ -27,6 +27,9 @@ public class player : MonoBehaviour
             Debug.Log("Exit: " + contact.otherCollider.gameObject.name);
         }
         Debug.Log("Exit: " + collisionInfo.other.name);
+
+        if (track == collisionInfo.other.gameObject.GetComponent<Track>())
+            track = null;
     }
 
     private void OnCollisionStay(Collision collisionInfo)

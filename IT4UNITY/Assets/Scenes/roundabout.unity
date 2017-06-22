@@ -13,7 +13,7 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 6
+  serializedVersion: 7
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -37,12 +37,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.44692713, g: 0.49678904, b: 0.5750876, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 6
+  serializedVersion: 7
   m_GIWorkflowMode: 0
-  m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -53,17 +53,22 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 3
+    serializedVersion: 4
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
     m_TextureHeight: 1024
+    m_AO: 0
     m_AOMaxDistance: 1
-    m_Padding: 2
     m_CompAOExponent: 0
+    m_CompAOExponentDirect: 0
+    m_Padding: 2
     m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
+    m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
   m_LightingDataAsset: {fileID: 0}
@@ -94,7 +99,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 403644, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.060001373
+      value: 12.34
       objectReference: {fileID: 0}
     - target: {fileID: 403644, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -134,7 +139,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aaad6969731cb3f419121435cbb71d86, type: 2}
     - target: {fileID: 11457396, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: LaneOrigin.x
-      value: 56
+      value: 68.4
       objectReference: {fileID: 0}
     - target: {fileID: 11457396, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: LaneOrigin.z
@@ -160,7 +165,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484312, guid: 1ff5c82d48ef04c47ad55b25847f06fd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 56.06
+      value: 68.46
       objectReference: {fileID: 0}
     - target: {fileID: 484312, guid: 1ff5c82d48ef04c47ad55b25847f06fd, type: 2}
       propertyPath: m_LocalPosition.y
@@ -220,7 +225,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65583402}
   m_Enabled: 1
-  serializedVersion: 6
+  serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -230,6 +235,7 @@ Light:
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
+    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -242,10 +248,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
 --- !u!4 &65583404
 Transform:
   m_ObjectHideFlags: 0
@@ -354,7 +360,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403644, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 28
+      value: 27.98
       objectReference: {fileID: 0}
     - target: {fileID: 403644, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -382,7 +388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11457396, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: LaneOrigin.z
-      value: 28
+      value: 27.98
       objectReference: {fileID: 0}
     - target: {fileID: 2321344, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -428,7 +434,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424636, guid: 963c500c8b98e60429e88a81176ff234, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 963c500c8b98e60429e88a81176ff234, type: 2}
@@ -442,7 +448,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 424360, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 56.99774
+      value: 69.4
       objectReference: {fileID: 0}
     - target: {fileID: 424360, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_LocalPosition.y
@@ -470,7 +476,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424360, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 181560, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_Name
@@ -554,11 +560,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -28.060001
+      value: -28.74
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.05
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalPosition.z
@@ -566,19 +572,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.0706595
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.7035675
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0706595
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7035675
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_RootOrder
@@ -590,7 +596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11487750, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: LaneOrigin.x
-      value: 28
+      value: 27.320002
       objectReference: {fileID: 0}
     - target: {fileID: 11487750, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: LaneOrigin.z
@@ -608,6 +614,18 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -11.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487750, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
+      propertyPath: speedboost
+      value: 11.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487750, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
+      propertyPath: LaneOrigin.y
+      value: 5.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
   m_IsPrefabParent: 0
@@ -624,7 +642,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 403644, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.060001373
+      value: 12.34
       objectReference: {fileID: 0}
     - target: {fileID: 403644, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -660,7 +678,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11457396, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: LaneOrigin.x
-      value: 56
+      value: 68.4
       objectReference: {fileID: 0}
     - target: {fileID: 11457396, guid: dabf387aa35a9dc41a7599aff97a63a0, type: 2}
       propertyPath: LaneOrigin.z
@@ -750,7 +768,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424636, guid: 963c500c8b98e60429e88a81176ff234, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 142188, guid: 963c500c8b98e60429e88a81176ff234, type: 2}
       propertyPath: m_Name
@@ -876,7 +894,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 424360, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 44.96
+      value: 57.36
       objectReference: {fileID: 0}
     - target: {fileID: 424360, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_LocalPosition.y
@@ -904,7 +922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424360, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 889ce9b1895972c4abc11a6ef84c0795, type: 2}
@@ -922,7 +940,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.060001373
+      value: 12.34
       objectReference: {fileID: 0}
     - target: {fileID: 464946, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: m_LocalPosition.y
@@ -958,7 +976,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11487750, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: LaneOrigin.x
-      value: 57.25
+      value: 69.65
       objectReference: {fileID: 0}
     - target: {fileID: 11487750, guid: 42c848f0af3637e4aa89ce8daabd70da, type: 2}
       propertyPath: LaneOrigin.z
