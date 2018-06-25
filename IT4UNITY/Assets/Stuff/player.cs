@@ -11,6 +11,8 @@ public class player : MonoBehaviour
     public int lane;
     public float maxVel = 20.0f;
     public GameObject playerExplosion;
+    public float jumpSpeed = 10.0f;
+
     // Use this for initialization
     private void Start()
     {
@@ -150,6 +152,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddRelativeForce((new Vector3(0.0f, jumpSpeed, 0.0f) + track.GetAccelerateDirection(transform.position, lane))*track.speedboost*10.0f,
+                ForceMode.Force);
+        }
         if (lane > 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
         {
             lane--;
