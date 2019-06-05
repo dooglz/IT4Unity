@@ -148,6 +148,16 @@ public class player : MonoBehaviour
             rb.velocity = rb.velocity.normalized*maxVel;
         }
     }
+	
+	private void Respawn()
+	{
+        transform.position = new Vector3(0, 1.0f, 0);
+        rb.position.Set(0, 1.0f, 0);
+        rb.rotation = Quaternion.identity;
+        rb.velocity = Vector3.zero;
+        track = null;
+        trackGo = null;
+	}
 
     // Update is called once per frame
     private void Update()
@@ -157,6 +167,10 @@ public class player : MonoBehaviour
             rb.AddRelativeForce((new Vector3(0.0f, jumpSpeed, 0.0f) + track.GetAccelerateDirection(transform.position, lane))*track.speedboost*10.0f,
                 ForceMode.Force);
         }
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			Respawn();
+		}
         if (lane > 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
         {
             lane--;
